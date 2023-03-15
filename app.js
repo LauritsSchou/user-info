@@ -14,12 +14,25 @@ function createUser(event) {
   const title = this.title.value;
   const mail = this.mail.value;
   const image = this.image.value;
+  const age = this.age.value;
+  const userName = this.userName.value;
 
   console.log(name);
   console.log(title);
   console.log(mail);
   console.log(image);
-
-  function validateUser(name, title, mail, image) {}
-  // validate user info
+  validateUser(name, title, mail, image, age, userName);
 }
+function validateUser(name, title, mail, image, age, userName) {
+  if (name.length > 2 && title && (mail || userName) && image && age >= "18") {
+    console.log("User Valid");
+    alert("User Valid");
+    return true;
+  } else {
+    alert("User Invalid");
+    console.log("User Invalid");
+    return false;
+  }
+}
+
+// validate user info
